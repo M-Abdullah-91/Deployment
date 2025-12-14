@@ -1,0 +1,47 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* navbar */
+.navbar{
+    height: 80px;
+  
+}
+.navbar:hover{
+    border: #4A4A4A 1px solid;
+}
+.navbar-brand img{
+    max-width: 300px;
+    height: 100px;
+}
+.icon{
+   display: flex;
+   gap: 20px;
+   margin-right: 50px;
+}
+.icon a {
+     text-decoration: none;
+     color: #4A4A4A;
+}
+.icon i{
+    font-size: 20px;
+}
+.icon i:hover{
+   color:#B6771D;
+}
+.icon span{
+    font-size: 20px;
+}
+.nav-link{
+    color: #4A4A4A;
+    font-size: 16px;
+    font-family: "playfair Display",sans-serif;
+}
+.nav-item{
+    color: #4A4A4A;
+   font-size: 16px;
+   font-family: "playfair Display",sans-serif;
+}
+/* hero section */
+
+
