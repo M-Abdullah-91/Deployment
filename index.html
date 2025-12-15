@@ -1,22 +1,360 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Hameedians</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
-<body> 
-    <!-- Navbar --> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="Gemini_Generated_Image_v9xktzv9xktzv9xk (1).png" alt="Logo" height="50"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hameedians | Natural Herbal Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2d5a27;
+            --secondary-color: #8eb57a;
+            --accent-color: #e8c07d;
+            --light-color: #f8f9fa;
+            --dark-color: #1a3317;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .icon a, .icon i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .icon a:hover, .icon i:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .icon span {
+            color: #ddd;
+            margin: 0 5px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.9)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+            color: var(--dark-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d9b06d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Products Preview */
+        .products-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            background-color: white;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonial-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .customer-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .newsletter-section h2 {
+            color: white;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-control {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer h5 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .icon {
+                margin-top: 15px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div style="height: 60px; width: 180px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; border-radius: 5px;">
+                    HAMEEDIANS
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -33,28 +371,302 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
+                <div class="icon">
+                    <a href="https://www.facebook.com/1715682781994201/photos/1715690241993455/">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hemaniherbal/?hl=en">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://youtu.be/_GqJMCEwJuQ?si=HwBvxSmgvIbKTyBd">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <span>|</span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero bg-primary text-white text-center py-5">
+    <section class="hero-section">
         <div class="container">
-            <h1 class="display-4">Welcome to Hameedians</h1>
-            <p class="lead">Your go-to place for natural health products and more!</p>
-            <a href="products.html" class="btn btn-light btn-lg">Explore Our Products</a>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Pure Herbal Wellness for a Balanced Life</h1>
+                        <p>Discover nature's healing power with our premium herbal products. Carefully crafted from the finest natural ingredients to promote health, vitality, and holistic wellbeing for you and your family.</p>
+                        <a href="products.html" class="btn btn-primary">Explore Our Products</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Optional: Add an image or illustration here -->
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Social Media Section -->
-    <div class="container text-center py-4">
-        <a href="https://www.facebook.com/1715682781994201/photos/1715690241993455/" class="social-icon mx-2"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/hemaniherbal/?hl=en" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtu.be/_GqJMCEwJuQ?si=HwBvxSmgvIbKTyBd" class="social-icon mx-2"><i class="fab fa-youtube"></i></a>
-        <a href="#" class="social-icon mx-2"><i class="fas fa-search"></i></a>
-        <a href="#" class="social-icon mx-2"><i class="fas fa-cart-shopping"></i></a>
-    </div>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>100% Natural</h4>
+                        <p>Pure herbal ingredients sourced directly from nature without any artificial additives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Quality Certified</h4>
+                        <p>All products are tested and certified for purity, safety, and effectiveness.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Holistic Wellness</h4>
+                        <p>Formulated to support overall health and wellbeing for body and mind.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h4>Free Shipping</h4>
+                        <p>Free delivery on all orders over $50. Fast and reliable shipping nationwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Best Sellers</h2>
+                <p>Discover our most popular herbal products loved by thousands</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0e6e4f6f65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80');"></div>
+                        <div class="product-content">
+                            <h4>Turmeric Herbal Powder</h4>
+                            <p class="text-muted">Powerful anti-inflammatory and antioxidant properties</p>
+                            <div class="price">$18.99</div>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1596040033221-a1f4f8a7d0a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');"></div>
+                        <div class="product-content">
+                            <h4>Ashwagandha Capsules</h4>
+                            <p class="text-muted">Reduces stress, boosts energy and improves focus</p>
+                            <div class="price">$24.99</div>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0e6e4f6f65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80');"></div>
+                        <div class="product-content">
+                            <h4>Herbal Immunity Booster</h4>
+                            <p class="text-muted">Strengthens your immune system naturally</p>
+                            <div class="price">$22.50</div>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0e6e4f6f65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80');"></div>
+                        <div class="product-content">
+                            <h4>Organic Herbal Tea Blend</h4>
+                            <p class="text-muted">Relaxing blend of calming herbs for better sleep</p>
+                            <div class="price">$15.99</div>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Stories</h2>
+                <p>What our customers say about our products</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I've been using Hameedians herbal products for 6 months now and my energy levels have never been better. The quality is exceptional!"</p>
+                        <div class="customer-name">Sarah Johnson</div>
+                        <div class="text-muted">Regular Customer</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The turmeric powder helped reduce my joint inflammation significantly. I'm so grateful for these natural solutions."</p>
+                        <div class="customer-name">Michael Chen</div>
+                        <div class="text-muted">Verified Buyer</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Excellent customer service and fast delivery. The herbal tea blend has become a part of my evening routine. Highly recommended!"</p>
+                        <div class="customer-name">Priya Sharma</div>
+                        <div class="text-muted">Wellness Enthusiast</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Join Our Wellness Community</h2>
+                    <p class="mb-4">Subscribe to our newsletter and get 10% off your first order, plus exclusive wellness tips and product updates.</p>
+                    
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email" aria-describedby="button-subscribe">
+                            <button class="btn btn-primary" type="button" id="button-subscribe">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Hameedians</h5>
+                    <p>Providing premium herbal products for over 20 years. Our mission is to bring the healing power of nature to every home.</p>
+                    <div class="icon mt-4">
+                        <a href="https://www.facebook.com/1715682781994201/photos/1715690241993455/">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hemaniherbal/?hl=en">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://youtu.be/_GqJMCEwJuQ?si=HwBvxSmgvIbKTyBd">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Our Products</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Herbal Powders</a></li>
+                        <li><a href="#">Capsules & Tablets</a></li>
+                        <li><a href="#">Herbal Teas</a></li>
+                        <li><a href="#">Essential Oils</a></li>
+                        <li><a href="#">Skincare Herbs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Herbal Street, Wellness City</li>
+                        <li><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@hameedians.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Hameedians. All Rights Reserved. | Designed with <i class="fas fa-heart text-danger"></i> for natural wellness</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <script>
+        // Simple cart functionality
+        document.querySelectorAll('.btn-primary.btn-sm').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const productName = this.parentElement.querySelector('h4').textContent;
+                alert(`Added "${productName}" to your cart!`);
+                
+                // Animate cart icon
+                const cartIcon = document.querySelector('.fa-cart-shopping');
+                cartIcon.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    cartIcon.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+        
+        // Newsletter subscription
+        document.getElementById('button-subscribe').addEventListener('click', function() {
+            const emailInput = document.querySelector('.newsletter-form input');
+            if(emailInput.value && emailInput.value.includes('@')) {
+                alert('Thank you for subscribing to our newsletter! Check your email for the 10% discount code.');
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+        
+        // Search functionality
+        document.querySelector('.fa-magnifying-glass').addEventListener('click', function() {
+            const searchTerm = prompt('What herbal product are you looking for?');
+            if(searchTerm) {
+                alert(`Searching for: ${searchTerm}\n(Note: This is a demo. In a real site, this would redirect to search results.)`);
+            }
+        });
+    </script>
 </body>
 </html>
+
+<!-- This comment is just added to learn git  -->
